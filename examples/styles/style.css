@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#gameTextInput {
+	position: relative;
+}
+
+#gameTextField {
+	width: 100%;
+	height: 200px;
+}
+
+#gameTextOutputOld {
+	color: gray;
+	position: relative;
+}
+
+#gameTextOutputNew {
+	position: relative;
+}

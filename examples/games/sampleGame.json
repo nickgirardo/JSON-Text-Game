@@ -1,0 +1,70 @@
+{
+    "title": "Sample Text Game",
+    "startState": "Begin",
+    "badCommand": "Sorry, I didn't quite get that",
+    "aliases": {
+        "look around": "look",
+        "wakeup": "wake up",
+        "use computer": "hack",
+        "enter room": "enter"
+    },
+    "states": {
+        "Begin": {
+            "accepted": [
+                "",
+                "wake up",
+                "look"
+            ],
+            "text": {
+                "": "Type 'wake up' to start your journey",
+                "wake up": "You roll out of bed and throw on some clothes",
+                "look": "Your eyes are still glued shut, maybe you should wakeup first."
+            },
+            "edges": {
+                "wake up": "Room"
+            }
+        },
+        "Room": {
+            "accepted": [
+                "look",
+                "hack",
+                "leave"
+            ],
+            "text": {
+                "look": "Your room is a cluttered mess, but at least it isn't as bad as your bathroom.\nYour laptop rests on your desk",
+                "hack": "You stumble over to your desk and open the lid of your laptop.\n Your computer comes to life.",
+                "leave": "You open your door and step into the hallway"
+            },
+            "edges": {
+                "hack": "Hack",
+                "leave": "Hallway"
+            }
+        },
+        "Hack": {
+            "accepted": [
+                "look",
+                "leave"
+            ],
+            "text": {
+                "look": "The light from your laptop screen shines into your tired eyes.",
+                "leave": "You close your laptops lid and get out of your seat."
+            },
+            "edges": {
+                "leave": "Room"
+            }
+        },
+        "Hallway": {
+            "accepted": [
+                "look",
+                "enter"
+            ],
+            "text": {
+                "look": "It's a boring hallway.",
+                "enter": "You decide to go back to your room"
+            },
+            "edges": {
+                "enter": "Room"
+            }
+        }
+    }
+}
